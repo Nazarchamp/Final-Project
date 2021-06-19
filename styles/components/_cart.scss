@@ -1,0 +1,295 @@
+// Blank Display For Cookie Storage
+.cookieFiller {
+	display: none;
+}
+// Container of our shoping cart with flex in it
+#shopping-cart-container {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+// Tje different categories that a poroduct has in it's row, they're styled all to be floated left and have width chosen to what looked nice
+.product-image {
+	float: left;
+	width: 20%;
+}
+.product-details {
+	float: left;
+	width: 37%;
+}
+.product-price {
+	float: left;
+	width: 12%;
+}
+.product-quantity {
+	float: left;
+	width: 10%;
+}
+.product-removal {
+	float: left;
+	width: 9%;
+}
+.product-line-price {
+	float: left;
+	width: 12%;
+	text-align: right;
+}
+// Put the before tags that contain nothing for the groups
+.group {
+	&:before {
+		content: '';
+		display: table;
+	}
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	zoom: 1;
+}
+
+// Create the before tags of the shopping cart and add some margin
+#shopping-cart {
+	&:before {
+		content: '';
+		display: table;
+	}
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	zoom: 1;
+	margin: 10px;
+}
+
+// Create before tags for our column labels, and negative indent them 
+.column-labels {
+	&:before {
+		content: '';
+		display: table;
+	}
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	zoom: 1;
+	label {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border-bottom: 1px solid #eee;
+	}
+	.product-image {
+		text-indent: -9999px;
+	}
+	.product-details {
+		text-indent: -9999px;
+	}
+	.product-removal {
+		text-indent: -9999px;
+	}
+}
+
+// Make the styling for the actual products,
+.product {
+    // Empty Befores
+	&:before {
+		content: '';
+		display: table;
+	}
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	zoom: 1;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    // Set the dollar sign befores
+	.product-price {
+		&:before {
+			content: '$';
+		}
+	}
+	.product-line-price {
+		&:before {
+			content: '$';
+		}
+    }
+    // COnfigure the image
+	.product-image {
+		text-align: center;
+		img {
+			width: 100px;
+		}
+    }
+    // Configure the product details
+	.product-details {
+		.product-title {
+			margin-right: 20px;
+			font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+		}
+		.product-description {
+			margin: 5px 20px 5px 0;
+			line-height: 1.4em;
+		}
+	}
+	.product-quantity {
+		input {
+			width: 40px;
+		}
+    }
+    // Make the remove product button
+	.remove-product {
+		border: 0;
+		padding: 4px 8px;
+		background-color: #c66;
+		color: #fff;
+		font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+		font-size: 12px;
+		border-radius: 3px;
+		&:hover {
+			background-color: #a44;
+		}
+	}
+}
+// Make totals also have blank befores
+.totals-item {
+	&:before {
+		content: '';
+		display: table;
+	}
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	zoom: 1;
+}
+// But make the value have a $ before
+.totals-value {
+	&:before {
+		content: '$';
+	}
+}
+h2 {
+	font-weight: 100;
+}
+label {
+	color: #000;
+}
+// Put the totals in the bottom right corner
+.totals {
+	.totals-item {
+		float: right;
+		clear: both;
+		width: 100%;
+		margin-bottom: 10px;
+		label {
+			float: left;
+			clear: both;
+			width: 79%;
+			text-align: right;
+		}
+		.totals-value {
+			float: right;
+			width: 21%;
+			text-align: right;
+		}
+	}
+	.totals-item-total {
+		font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+	}
+}
+// Create our nice checkout button
+.checkout {
+	float: right;
+	border: 0;
+	margin-top: 20px;
+	padding: 6px 25px;
+	background-color: #6b6;
+	color: #fff;
+	font-size: 25px;
+	border-radius: 3px;
+	width: auto;
+	&:hover {
+		background-color: #494;
+	}
+}
+// Allow for simple stacking at 800px
+@media screen and (max-width: 800px) {
+	#shopping-cart {
+		margin: 10px;
+		padding-top: 20px;
+		border-top: 1px solid #eee;
+	}
+	.column-labels {
+		display: none;
+	}
+	.product-image {
+		float: right;
+		width: auto;
+		img {
+			margin: 0 0 10px 10px;
+		}
+	}
+	.product-details {
+		float: none;
+		margin-bottom: 10px;
+		width: auto;
+	}
+	.product-price {
+		clear: both;
+		width: 70px;
+	}
+	.product-quantity {
+		width: 100px;
+		input {
+			margin-left: 20px;
+		}
+		&:before {
+			content: 'x';
+		}
+	}
+	.product-removal {
+		width: auto;
+	}
+	.product-line-price {
+		float: right;
+		width: 70px;
+	}
+}
+
+// Create extremely tight stacking at 380px
+@media screen and (max-width: 380px) {
+	.product-removal {
+		float: right;
+	}
+	.product-line-price {
+		float: right;
+		clear: left;
+		width: auto;
+		margin-top: 10px;
+	}
+	.product {
+		.product-line-price {
+			&:before {
+				content: 'Item Total: $';
+			}
+		}
+	}
+	.totals {
+		.totals-item {
+			label {
+				width: 60%;
+			}
+			.totals-value {
+				width: 40%;
+			}
+		}
+	}
+}

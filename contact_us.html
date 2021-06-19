@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="styles/index.css">
+	<link rel="stylesheet" href="styles/contact_form.css">
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id"
+		content="331646472634-hgfej642hlr92592vlrohsgls71b3s8c.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="Scripts/nav.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Memory Express</h1>
+		<nav>
+			<div class="btn not-active" id="navToggle" onclick="toggleClass(this)">
+				<span class="menuspan"></span>
+				<span class="menuspan"></span>
+				<span class="menuspan"></span>
+			</div>
+			<div id="shopping-cart-btn">
+                <a href="cart.html">
+                    <img src="https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-11.jpg">
+                </a>
+            </div>
+			<div id="mySidenav" class="sidenav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="cart.html">Cart</a></li>
+				<li><a href="login.html">Sign In</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<!--Contact Us Form that will Send emails by sending to my url as eng2ukr is one url I own-->
+		<div id="contact-container">
+			<form id="contact" action="https://ptecfinal.eng2ukr.com" method="post">
+				<h3>Contact Memory Express</h3>
+				<fieldset>
+					<input placeholder="Your name" type="text" tabindex="1" required autofocus>
+				</fieldset>
+				<fieldset>
+					<input placeholder="Your Email Address" type="email" tabindex="2" required>
+				</fieldset>
+				<fieldset>
+					<input placeholder="Your Phone Number (optional)" type="tel" tabindex="3">
+				</fieldset>
+				<fieldset>
+					<input placeholder="Subject" type="text" tabindex="4" required>
+				</fieldset>
+				<fieldset>
+					<textarea placeholder="Type your message body here..." tabindex="5" required></textarea>
+				</fieldset>
+				<fieldset>
+					<button name="submit" type="submit" id="contact-submit">Submit</button>
+				</fieldset>
+			</form>
+		</div>
+	</main>
+</body>
+
+</html>

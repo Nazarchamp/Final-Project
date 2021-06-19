@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="styles/contact_form.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id"
+        content="331646472634-hgfej642hlr92592vlrohsgls71b3s8c.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="Scripts/nav.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Memory Express</h1>
+        <nav>
+            <div class="btn not-active" id="navToggle" onclick="toggleClass(this)">
+                <span class="menuspan"></span>
+                <span class="menuspan"></span>
+                <span class="menuspan"></span>
+            </div>
+            <div id="shopping-cart-btn">
+                <a href="cart.html">
+                    <img src="https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-11.jpg">
+                </a>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Sign In</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="contact-container">
+            <div id="contact">
+                <!--Welcome Headers-->
+                <h1 id="welcome-h1">Welcome Guest!</h1>
+                <h1 id="top-pick" style="display: none; margin-top: 20px; margin-bottom: 0;">Your Top Pick:</h1>
+
+                <!--Recommended Item-->
+                <div class="outmostDiv" style="display: none;">
+                    <div class="bodyDiv">
+                        <div class="imgContainer">
+                            <a class="imageLink">
+                                <img class="productImage"
+                                    src="https://media.memoryexpress.com/Images/Products/MX00116013/0?Size=Default">
+                            </a>
+                        </div>
+                        <div class="itemInfoContainer">
+                            <a class="infoLink">
+                                <span class="logoSpan">
+                                    <img src="https://media.memoryexpress.com/Images/Brands/evga?Size=Small">
+                                </span>
+                                GeForce RTX 3060 XC Gaming 12GB PCI-E w/ HDMI, Triple DP
+                            </a>
+                        </div>
+                    </div>
+                    <div class="priceDiv">
+                        <div class="priceTextDiv">
+                            <div class="priceText"><span>$529.99</span></div>
+                            <div class="noticeText">
+                                <div class="sloganText">Everyday Low Price!</div>
+                            </div>
+                        </div>
+                        <div class="buyButtonContainer">
+                            <a class="buyButton"
+                                onclick='addItem("GeForce RTX 3060 XC Gaming 12GB PCI-E w/ HDMI, Triple DP", "529.99", 1)'>Buy</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Container for google OAuth-->
+                <div id="authContainer">
+                    <div class="g-signin2" style="margin: 20px;" data-onsuccess="onSignIn"></div>
+                </div>
+                <a onclick="signOut()" style="text-decoration: underline; display:none; cursor: pointer; margin-top: 10px;" id="signOutA">Sign Out</a>
+            </div>
+        </div>
+    </main>
+    <script src="Scripts/oauthLogin.js"></script>
+</body>
+
+</html>

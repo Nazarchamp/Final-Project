@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="styles/index.css">
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id"
+		content="331646472634-hgfej642hlr92592vlrohsgls71b3s8c.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<body>
+	<!--Standard Header, with  title, sidebar opener and cart-->
+	<header>
+		<h1>Memory Express</h1>
+		<nav>
+			<div class="btn not-active" id="navToggle" onclick="toggleClass(this)">
+				<span class="menuspan"></span>
+				<span class="menuspan"></span>
+				<span class="menuspan"></span>
+			</div>
+			<div id="shopping-cart-btn">
+				<a href="cart.html">
+					<img src="https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-11.jpg">
+				</a>
+			</div>
+			<div id="shopping-cart-btn">
+				<a href="cart.html">
+					<img src="https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-11.jpg">
+				</a>
+			</div>
+			<div id="mySidenav" class="sidenav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="cart.html">Cart</a></li>
+				<li><a href="login.html">Sign In</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<content>
+			<div id="productContainer">
+				<!--All The Dropdowns-->
+				<div class="dropdown" style="width:100%; display:flex; justify-content: center;">
+					<button class="dropbtn" style="height: auto; width:200px;">Select a Product</button>
+					<div class="dropdown-content" style="top:60px; width:200px;">
+						<a onclick="getProducts('AdapterCards')">Adapter Cards</a>
+						<a onclick="getProducts('ControllerCards')">Controller Cards</a>
+						<a onclick="getProducts('HardDrives')">Hard Drives</a>
+						<a onclick="getProducts('Motherboards')">Motherboards</a>
+						<a onclick="getProducts('Processors')">Processors</a>
+						<a onclick="getProducts('VideoCards')">Video Cards</a>
+						<a onclick="getProducts('CDDVDDrives')">Optical Disc Drives</a>
+						<a onclick="getProducts('Cooling')">Cooling</a>
+						<a onclick="getProducts('Memory')">Memory</a>
+						<a onclick="getProducts('NetworkAdapters')">Network Adapters</a>
+						<a onclick="getProducts('SoundCards')">Sound Cards</a>
+						<a onclick="getProducts('ComputerCases')">Computer Cases</a>
+						<a onclick="getProducts('FloppyDrives')">Floppy Drives</a>
+						<a onclick="getProducts('Modems')">Modems</a>
+						<a onclick="getProducts('PowerSupplies')">Power Supplies</a>
+						<a onclick="getProducts('VideoCaptureCards')">Video Capture Cards</a>
+					</div>
+				</div>
+				<h1 style="width: 100%;" id="DisplayingText"></h1>
+			</div>
+		</content>
+	</main>
+	<!--Script Imports on Live HTML-->
+	<script src="Scripts/nav.js"></script>
+	<script src="Scripts/productDisplay.js"></script>
+</body>
+
+</html>
