@@ -86,9 +86,10 @@ li a {
 	color: #f1f1f1;
 	display: block;
 	transition: 0.3s;
-	&:hover {
+	&:hover, &#current {
 		color: #818181;
 	}
+
 }
 ul{
 	@include flexbox;
@@ -106,7 +107,11 @@ ul{
 	background-color: #111;
 	overflow-x: hidden;
 	transition: 0.5s;
-    padding-top: 60px;
+	padding-top: 60px;
+	// Unflex the ul
+	ul{
+		display: block;
+	}
     // Style the sidenavs links
 	a {
 		padding: 8px 8px 8px 32px;

@@ -231,7 +231,7 @@ li a {
   transition: 0.3s;
 }
 
-li a:hover {
+li a:hover, li a#current {
   color: #818181;
 }
 
@@ -254,6 +254,10 @@ ul {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   padding-top: 60px;
+}
+
+.sidenav ul {
+  display: block;
 }
 
 .sidenav a {
