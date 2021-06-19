@@ -1,0 +1,13 @@
+@import '../utils/mixins';
+
+// Create the auth container
+#authContainer {
+	@include flexbox;
+	@include centerFlexbox;
+	flex-direction: column;
+	height: 100%;
+}
+// Create the welcome
+#welcome-h1 {
+	align-self: flex-start;
+}

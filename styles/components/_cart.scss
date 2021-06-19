@@ -1,3 +1,5 @@
+@import '../utils/mixins';
+
 // Blank Display For Cookie Storage
 .cookieFiller {
 	display: none;
@@ -5,10 +7,9 @@
 // Container of our shoping cart with flex in it
 #shopping-cart-container {
 	margin-top: 20px;
-	display: flex;
+	@include flexbox;
+	@include centerFlexbox;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 }
 // Tje different categories that a poroduct has in it's row, they're styled all to be floated left and have width chosen to what looked nice
 .product-image {

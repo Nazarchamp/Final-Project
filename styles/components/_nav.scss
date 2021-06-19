@@ -1,0 +1,238 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+
+// Create the animation for our little bounce rotate scale act of the hamburger menu
+@keyframes top {
+	0% {
+		top: 0;
+		transform: rotate(0);
+	}
+	50% {
+		top: 22px;
+		transform: rotate(0);
+	}
+	100% {
+		top: 22px;
+		transform: rotate(45deg);
+	}
+}
+@keyframes top-2 {
+	0% {
+		top: 22px;
+		transform: rotate(45deg);
+	}
+	50% {
+		top: 22px;
+		transform: rotate(0deg);
+	}
+	100% {
+		top: 0;
+		transform: rotate(0deg);
+	}
+}
+@keyframes bottom {
+	0% {
+		bottom: 0;
+		transform: rotate(0);
+	}
+	50% {
+		bottom: 22px;
+		transform: rotate(0);
+	}
+	100% {
+		bottom: 22px;
+		transform: rotate(135deg);
+	}
+}
+@keyframes bottom-2 {
+	0% {
+		bottom: 22px;
+		transform: rotate(135deg);
+	}
+	50% {
+		bottom: 22px;
+		transform: rotate(0);
+	}
+	100% {
+		bottom: 0;
+		transform: rotate(0);
+	}
+}
+@keyframes scaled {
+	50% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+@keyframes scaled-2 {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+// Create the side nav that appears when it pulls out of the side
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+    padding-top: 60px;
+    // Style the sidenavs links
+	a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+		&:hover {
+			color: #f1f1f1;
+		}
+    }
+}
+// Create basic styling for everyone
+li {
+	list-style: none;
+}
+p {
+	margin: 10px;
+}
+h1 {
+	margin: 10px;
+}
+button {
+	margin: 10px;
+	color: white;
+	width: 100px;
+	height: 50px;
+	font-size: 24px;
+	border: none;
+}
+div {
+	button {
+		background-color: green;
+	}
+}
+.Blank {
+	margin: 10px;
+	color: red;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 2em;
+	display: block;
+}
+// Style the header
+header {
+	min-height: 60px;
+	font-size: calc(10px + (20 - 10) * ((100vw - 280px) / (1600 - 300)));
+	@include flexbox;
+	@include centerFlexbox;
+	background: $memoryExGreen;
+	color: white;
+	width: 100%;
+}
+// Style the button for opening the nav
+.btn {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	transform: translate(-50%, -50%);
+	width: 30px;
+	cursor: pointer;
+	z-index: 100;
+	transition: 0.5s;
+}
+// Style the shopping cart button
+#shopping-cart-btn {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	transform: translate(-50%, -50%);
+	width: 30px;
+	cursor: pointer;
+	z-index: 100;
+	transition: 0.5s;
+	a {
+		img {
+			width: 100%;
+		}
+	}
+}
+.foldOutMenu {
+	width: 100vw;
+}
+// Make the spans specifically created for jumping around
+.menuspan {
+	display: block;
+	width: 100%;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3);
+	border-radius: 3px;
+	height: 4px;
+	background: white;
+	transition: all .3s;
+	position: relative;
+	z-index: 100;
+	+ {
+		.menuspan {
+			margin-top: 6px;
+		}
+	}
+}
+// Add the animations for our spans on activation
+.active {
+	.menuspan {
+		+ {
+			.menuspan {
+				margin-top: 18px;
+			}
+		}
+	}
+	span {
+		&:nth-child(1) {
+			animation: ease .7s top forwards;
+		}
+		&:nth-child(2) {
+			animation: ease .7s scaled forwards;
+		}
+		&:nth-child(3) {
+			animation: ease .7s bottom forwards;
+		}
+	}
+}
+
+// Add the animations for our spans pm disactivation
+.not-active {
+	span {
+		&:nth-child(1) {
+			animation: ease .7s top-2 forwards;
+		}
+		&:nth-child(2) {
+			animation: ease .7s scaled-2 forwards;
+		}
+		&:nth-child(3) {
+			animation: ease .7s bottom-2 forwards;
+		}
+	}
+}
+
+// Make Header H1 certain size after extension
+@media only screen and (min-width: 975px) {
+	header {
+		h1 {
+			font-size: 32px;
+		}
+	}
+}

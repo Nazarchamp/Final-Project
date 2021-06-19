@@ -1,0 +1,168 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+
+// Create a container for rapid product creation
+#productContainer {
+	margin-top: 20px;
+	@include flexbox;
+	flex-flow: row wrap;
+	margin-left: -.3125rem;
+	margin-right: -.3125rem;
+	width: calc(185px * 4 + 80px);
+	padding: 0 20px;
+}
+// This is the outmost container, rem is used for ratios
+.outmostDiv {
+	margin-top: 1.5625rem;
+	margin-bottom: .3125rem;
+	@include flexbox;
+	flex-direction: column;
+	flex: 1 0 11.5625rem;
+	min-width: 11.5625rem;
+	margin-left: .3125rem;
+	margin-right: .3125rem;
+	max-width: 185px;
+}
+// The body div of our product
+.bodyDiv {
+	flex: 1 0 auto;
+	@include flexbox;
+	flex-direction: column;
+	border-width: .3125rem;
+	border-bottom-width: 0;
+	border-style: solid;
+	border-radius: .4375rem .4375rem 0 0;
+	padding: .3125rem;
+	border-color: $memoryExGreen;
+}
+// Style our products image container
+.imgContainer {
+	@include flexbox;
+	justify-content: center;
+	padding: 0 .3125rem;
+}
+a {
+	&:active {
+		color: $memoryExGreen;
+		text-decoration: none;
+	}
+}
+// styke our products image
+.productImage {
+	display: block;
+	box-sizing: border-box;
+	width: 85%;
+	height: auto;
+	margin: 0 auto;
+	max-width: 12.5rem;
+}
+// Style our items infor container
+.itemInfoContainer {
+	margin-bottom: .325rem;
+}
+// Style the links for our iteems
+.infoLink {
+	display: inline-block;
+	font-size: .75rem;
+	line-height: 1.2;
+	color: #000;
+	max-height: 4.56em;
+	overflow-y: hidden;
+}
+// Style the span that is used for our logo
+.logoSpan {
+	font-weight: bold;
+	display: block;
+	height: 1.2em;
+	img {
+		max-height: 1.2em;
+		margin-bottom: .125rem;
+		margin-right: auto;
+	}
+}
+// Style the igeneral iamge
+img {
+	border-style: none;
+}
+// Style what prices should look like]
+.priceDiv {
+	background-color: $memoryExGreen;
+	box-sizing: border-box;
+	height: 4.375rem;
+	background-position: top right;
+	background-size: 5rem 2.1875rem;
+	background-repeat: no-repeat;
+	border-radius: 0 0 .4375rem .4375rem;
+	padding: 0 .5rem .4375rem .5rem;
+	@include flexbox;
+}
+.priceTextDiv {
+	flex: 1 0 0%;
+	@include flexbox;
+	flex-direction: column;
+	justify-content: flex-end;
+	margin-bottom: -.125rem;
+}
+//Style the prices div
+.priceText {
+	@include flexbox;
+	align-items: flex-start;
+	font-size: 1.375rem;
+	font-weight: bold;
+	line-height: 1;
+	color: #fff;
+}
+.noticeText {
+	height: 1.375rem;
+	@include flexbox;
+	flex-direction: column;
+	justify-content: center;
+}
+// Style the little grey buy button
+.buyButtonContainer {
+	@include flexbox;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 2.75rem;
+}
+.buyButton {
+	background-color: #333;
+	color: #fff;
+	box-sizing: border-box;
+	border-radius: .3125rem;
+	padding: .25rem;
+	font-size: .6875rem;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+}
+// Style the everyday low price text
+.sloganText {
+	font-size: .625rem;
+	line-height: 1.1;
+	color: #000;
+}
+content {
+	width: 100vw;
+	@include flexbox;
+	justify-content: center;
+}
+
+// Change down the amount of boxes taht can fit in screen size
+@media only screen and (max-width: 1300px) {
+	#productContainer {
+		width: calc(185px * 3 + 70px);
+	}
+}
+@media only screen and (max-width: 975px) {
+	#productContainer {
+		width: calc(185px * 2 + 70px);
+	}
+}
+@media only screen and (max-width: 425px) {
+	#productContainer {
+        width: 185px;
+        justify-content: center;
+	}
+}

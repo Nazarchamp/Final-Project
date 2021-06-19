@@ -166,7 +166,7 @@ function getAllCookies() {
                 count += 1
             }
         });
-        if(count === 2 && ca.length === 2){
+        if(count === ca.length){
             $('.totals').remove();
             $('.column-labels').remove();
             $('.checkout').remove();
