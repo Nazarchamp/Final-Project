@@ -78,6 +78,23 @@
 	}
 }
 
+// Styling for our long menu
+li a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #f1f1f1;
+	display: block;
+	transition: 0.3s;
+	&:hover {
+		color: #818181;
+	}
+}
+ul{
+	@include flexbox;
+	margin:0;
+}
+
 // Create the side nav that appears when it pulls out of the side
 .sidenav {
 	height: 100%;
@@ -228,11 +245,26 @@ header {
 	}
 }
 
-// Make Header H1 certain size after extension
+// Make Header H1 certain size after extension, also make long menu visible
 @media only screen and (min-width: 975px) {
 	header {
 		h1 {
 			font-size: 32px;
 		}
+	}
+	#regularMenu{
+		display: flex;
+	}
+	#navToggle{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 975px) {
+	#regularMenu{
+		display: none;
+	}
+	#navToggle{
+		display: block;
 	}
 }
